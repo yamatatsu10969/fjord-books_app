@@ -220,6 +220,6 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
-  title:
+  titles:
     editing_book: Editing Book
     new_book: New Book

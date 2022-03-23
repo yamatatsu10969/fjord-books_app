@@ -212,6 +212,7 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-  title:
+  titles:
     editing_book: 本の編集
     new_book: 本の新規作成
+
