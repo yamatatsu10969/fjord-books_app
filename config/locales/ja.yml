@@ -219,6 +219,8 @@ ja:
     created: "%{name}の作成に成功しました。"
     updated: "%{name}の更新に成功しました。"
     destroyed: "%{name}の削除に成功しました。"
+  alerts:
+    confirm: "本当によろしいですか？"
 
 
 
