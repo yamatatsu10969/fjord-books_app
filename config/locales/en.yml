@@ -151,6 +151,13 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+    links:
+      show: Show
+      back: Back
+      destroy: Destroy
+      edit: Edit
+      new: New Book
+      cancel: Cancel
   number:
     currency:
       format:

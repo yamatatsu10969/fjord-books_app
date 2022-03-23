@@ -145,6 +145,13 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+    links:
+      show: 詳細
+      back: 戻る
+      destroy: 削除
+      edit: 編集
+      new: 新規作成
+      cancel: キャンセル
   number:
     currency:
       format:
