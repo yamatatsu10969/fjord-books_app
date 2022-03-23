@@ -215,4 +215,11 @@ ja:
   titles:
     editing_book: 本の編集
     new_book: 本の新規作成
+  notices:
+    created: "%{name}の作成に成功しました。"
+    updated: "%{name}の更新に成功しました。"
+    destroyed: "%{name}の削除に成功しました。"
+
+
+
 

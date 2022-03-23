@@ -223,3 +223,7 @@ en:
   titles:
     editing_book: Editing Book
     new_book: New Book
+  notices:
+    created: "%{name} was successfully created."
+    updated: "%{name} was successfully updated."
+    destroyed: "%{name} was successfully destroyed."
