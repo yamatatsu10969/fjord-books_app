@@ -10,9 +10,6 @@
 </head>
 
 <body>
-<% if user_signed_in? %>
-  <%= link_to t("views.common.sign_out"), destroy_user_session_path, method: :delete, class: 'navbar-link' %>
-<% end %>
 
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -21,5 +18,13 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 <%= yield %>
+
+
+<% if user_signed_in? %>
+  <p>
+    <%= link_to t("views.links.sign_out"), destroy_user_session_path, method: :delete, class: 'navbar-link' %>
+    <%= link_to t("views.links.user_edit"), edit_user_registration_path, class: 'navbar-link' %>
+  </p>
+<% end %>
 </body>
 </html>
