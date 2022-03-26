@@ -22,8 +22,10 @@
 
 <% if user_signed_in? %>
   <p>
-    <%= link_to t("views.links.sign_out"), destroy_user_session_path, method: :delete, class: 'navbar-link' %>
+    <%= link_to t("views.links.books"), books_path, class: 'navbar-link' %>
+    <%= link_to t("views.links.users"), users_path, class: 'navbar-link' %>
     <%= link_to t("views.links.user_edit"), edit_user_registration_path, class: 'navbar-link' %>
+    <%= link_to t("views.links.sign_out"), destroy_user_session_path, method: :delete, class: 'navbar-link' %>
   </p>
 <% end %>
 </body>
