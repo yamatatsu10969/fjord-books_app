@@ -4,7 +4,6 @@
   <thead>
   <tr>
     <th><%= User.human_attribute_name(:email) %></th>
-    <th><%= User.human_attribute_name(:profile_image) %></th>
     <th><%= User.human_attribute_name(:name) %></th>
     <th><%= User.human_attribute_name(:postal_code) %></th>
     <th><%= User.human_attribute_name(:address) %></th>
@@ -16,8 +15,7 @@
   <% @users.each do |user| %>
     <tr>
       <td><%= user.email %></td>
-      <td><%= image_tag user.profile_image if user.profile_image.present? %></td>
-      <td><%= user.name %></td>
+      <td><%= image_tag user.profile_image.variant(resize: "20x20") if user.profile_image.present? %><%= user.name %></td>
       <td><%= user.postal_code %></td>
       <td><%= user.address %></td>
       <td><%= link_to t('views.common.show'), user %></td>
