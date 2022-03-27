@@ -3,6 +3,14 @@
   <%= f.text_field :name %>
 </div>
 
+<% if current_user.profile_image.present? %>
+  <div class="field">
+    <%= t('devise.registrations.edit.current_profile_image') %>
+    <br/>
+    <%= image_tag current_user.profile_image.variant(resize: "80x80") %>
+  </div>
+<% end %>
+
 <div class="field">
   <%= f.label :profile_image %>
   <%= f.file_field :profile_image %>
