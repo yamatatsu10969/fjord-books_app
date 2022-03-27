@@ -3,7 +3,7 @@
   <%= f.text_field :name %>
 </div>
 
-<% if current_user.profile_image.present? %>
+<% if current_user.present? && current_user.profile_image.present? %>
   <div class="field">
     <%= t('devise.registrations.edit.current_profile_image') %>
     <br/>
