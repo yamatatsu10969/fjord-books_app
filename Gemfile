@@ -30,7 +30,6 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'i18n_generators'
 gem 'rails-i18n'
 
 group :development, :test do
@@ -39,6 +38,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'i18n_generators'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop-fjord', require: false
