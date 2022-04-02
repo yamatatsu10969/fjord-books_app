@@ -33,6 +33,16 @@
   <% end %>
 </p>
 
+<p>
+  <strong><%= t('views.users.show.followings_number') %>:</strong>
+  <%= @user.followings.size %>
+</p>
+
+<p>
+  <strong><%= t('views.users.show.followers_number') %>:</strong>
+  <%= @user.followers.size %>
+</p>
+
 <% if current_user != @user %>
   <% if current_user.following?(@user) %>
     <%= render 'unfollow_button', user: @user %>
