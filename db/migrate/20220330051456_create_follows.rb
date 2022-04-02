@@ -7,6 +7,7 @@ class CreateFollows < ActiveRecord::Migration[6.1]
       t.integer :followee_id
 
       t.timestamps
+      t.index %i[followee_id follower_id], unique: true
     end
   end
 end

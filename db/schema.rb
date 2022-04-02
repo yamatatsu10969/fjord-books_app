@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2022_03_30_051456) do
     t.integer "followee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index %w[followee_id follower_id], name: "index_follows_on_followee_id_and_follower_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
