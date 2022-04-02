@@ -230,6 +230,10 @@ ja:
         unfollow: フォロー解除
         followings_number: フォロー数
         followers_number: フォロワー数
+      followings:
+        followee_list: "%{name}のフォロー一覧"
+      followers:
+        follower_list: "%{name}のフォロワー一覧"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

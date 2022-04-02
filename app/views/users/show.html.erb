@@ -35,12 +35,12 @@
 
 <p>
   <strong><%= t('views.users.show.followings_number') %>:</strong>
-  <%= @user.followings.size %>
+  <%= link_to @user.followings.size, followings_user_path(@user.id) %>
 </p>
 
 <p>
   <strong><%= t('views.users.show.followers_number') %>:</strong>
-  <%= @user.followers.size %>
+  <%= link_to @user.followers.size, followers_user_path(@user.id) %>
 </p>
 
 <% if current_user != @user %>
