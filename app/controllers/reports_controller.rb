@@ -23,22 +23,22 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new(report_params)
 
-    respond_to do |_format|
+    respond_to do |format|
       if @report.save
-        redirect_to @report, notice: 'Report was successfully created.'
+        format.html { redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human) }
       else
-        render :new, status: :unprocessable_entity
+        format.html { render :new }
       end
     end
   end
 
   # PATCH/PUT /reports/1
   def update
-    respond_to do |_format|
+    respond_to do |format|
       if @report.update(report_params)
-        redirect_to @report, notice: 'Report was successfully updated.'
+        format.html { redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human) }
       else
-        render :edit, status: :unprocessable_entity
+        format.html { render :edit }
       end
     end
   end
@@ -46,8 +46,8 @@ class ReportsController < ApplicationController
   # DELETE /reports/1
   def destroy
     @report.destroy
-    respond_to do |_format|
-      redirect_to reports_url, notice: 'Report was successfully destroyed.'
+    respond_to do |format|
+      format.html { redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human) }
     end
   end
 
