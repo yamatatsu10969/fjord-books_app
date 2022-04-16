@@ -22,7 +22,7 @@ class ReportsController < ApplicationController
   # POST /reports
   def create
     @report = Report.new(report_params)
-    @report.user = current_user
+    @report.author = current_user
 
     respond_to do |format|
       if @report.save
