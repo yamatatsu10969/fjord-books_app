@@ -13,5 +13,24 @@
   <%= @report.author.name %>
 </p>
 
+<% if @report.comments.empty? %>
+  <p>
+    <strong><%= Comment.model_name.human %>:</strong>
+    <%= t('views.common.comments_empty') %>
+  </p>
+<% else %>
+  <p>
+    <strong><%= Comment.model_name.human %>:</strong>
+  </p>
+  <% @report.comments.each do |comment| %>
+    <p>
+      <%= comment.author.name %>
+      <%= comment.body %>
+    </p>
+  <% end %>
+<% end %>
+
+
+
 <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <%= link_to t('views.common.back'), reports_path %>
