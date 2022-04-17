@@ -10,7 +10,7 @@
   <% commentable.comments.each do |comment| %>
     <p>
       <%= comment.body %>
-      <%= comment.user.name %>
+      <%= comment.user.name.nil? ? comment.user.email : comment.user.name %>
       <%= comment.created_at %>
     </p>
   <% end %>
