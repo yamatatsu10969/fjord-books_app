@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
+  before_action :prohibit_edit_except_author, only: %i[edit update destroy]
 
   # GET /reports
   def index
@@ -64,5 +65,9 @@ class ReportsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def report_params
     params.require(:report).permit(:title, :body)
+  end
+
+  def prohibit_edit_except_author
+    redirect_to reports_path, notice: t('reports.common.notice_prohibit_edit_except_author') unless current_user == @report.author
   end
 end

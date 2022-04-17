@@ -251,6 +251,10 @@ ja:
       notice: "フォローしました。"
     destroy:
       notice: "フォロー解除しました。"
+  reports:
+    common:
+      notice_prohibit_edit_except_author: "著者以外は日報を編集できません"
+
   # devise-i18n-viewsをオーバーライド
   devise:
     registrations:
