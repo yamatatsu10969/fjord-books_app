@@ -17,6 +17,19 @@ class CommentsController < ApplicationController
     redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
+  def edit
+    @comment = @commentable.comments.find(params[:id])
+  end
+
+  def update
+    @comment = @commentable.comments.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
+    else
+      redirect_to @commentable, alert: @comment.errors.full_messages.join(', ')
+    end
+  end
+
   private
 
   def comment_params

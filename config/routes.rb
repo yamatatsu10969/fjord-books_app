@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   root to: 'books#index'
   resources :comments, only: [:create]
   resources :books do
-    resources :comments, only: [:create, :destroy], module: :books
+    resources :comments, only: [:create, :destroy, :edit, :update], module: :books
   end
   resources :reports do
-    resources :comments, only: [:create, :destroy], module: :reports
+    resources :comments, only: [:create, :destroy, :edit, :update], module: :reports
   end
   resources :users, only: %i[index show] do
     resource :relationships, only: %i[create destroy]

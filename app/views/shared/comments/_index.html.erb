@@ -16,6 +16,7 @@
       <%= comment.body %>
     </p>
     <% if comment.user == current_user %>
+      <%= link_to t('views.common.edit'), edit_polymorphic_url([commentable, comment]) %>
       <%= link_to t('views.common.destroy'), polymorphic_url([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
     <% end %>
   <% end %>
