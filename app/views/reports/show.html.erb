@@ -24,13 +24,23 @@
   </p>
   <% @report.comments.each do |comment| %>
     <p>
-      <%= comment.author.name %>
       <%= comment.body %>
+      <%= comment.user.name %>
+      <%= comment.created_at %>
     </p>
   <% end %>
 <% end %>
 
+<%= form_with(model: [@report, @comment], method: :post, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
 
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
 
 <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <%= link_to t('views.common.back'), reports_path %>
