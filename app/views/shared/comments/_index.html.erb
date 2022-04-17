@@ -9,9 +9,14 @@
   </p>
   <% commentable.comments.each do |comment| %>
     <p>
-      <%= comment.body %>
       <%= comment.user.name.nil? ? comment.user.email : comment.user.name %>
       <%= l(comment.created_at, format: :long) %>
     </p>
+    <p>
+      <%= comment.body %>
+    </p>
+    <% if comment.user == current_user %>
+      <%= link_to t('views.common.destroy'), polymorphic_url([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+    <% end %>
   <% end %>
 <% end %>
