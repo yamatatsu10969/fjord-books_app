@@ -16,7 +16,7 @@
     <tr>
       <td><%= report.title %></td>
       <td><%= report.body %></td>
-      <td><%= report.author.name %></td>
+      <td><%= report.author.name.empty? ? report.author.email : report.author.name %></td>
       <td><%= l(report.created_at, format: :long) %></td>
       <td><%= link_to t('views.common.show'), report %></td>
       <% if current_user == report.author %>

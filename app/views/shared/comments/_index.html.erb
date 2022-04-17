@@ -9,7 +9,7 @@
   </p>
   <% commentable.comments.each do |comment| %>
     <p>
-      <%= comment.user.name.nil? ? comment.user.email : comment.user.name %>
+      <%= comment.user.name.empty? ? comment.user.email : comment.user.name %>
       <%= l(comment.created_at, format: :long) %>
     </p>
     <p>
