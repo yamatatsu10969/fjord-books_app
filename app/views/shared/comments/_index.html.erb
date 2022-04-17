@@ -11,7 +11,7 @@
     <p>
       <%= comment.body %>
       <%= comment.user.name.nil? ? comment.user.email : comment.user.name %>
-      <%= comment.created_at %>
+      <%= l(comment.created_at, format: :long) %>
     </p>
   <% end %>
 <% end %>
