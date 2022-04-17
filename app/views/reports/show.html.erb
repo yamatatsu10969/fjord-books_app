@@ -13,33 +13,9 @@
   <%= @report.author.name %>
 </p>
 
-<% if @report.comments.empty? %>
-  <p>
-    <strong><%= Comment.model_name.human %>:</strong>
-    <%= t('views.common.comments_empty') %>
-  </p>
-<% else %>
-  <p>
-    <strong><%= Comment.model_name.human %>:</strong>
-  </p>
-  <% @report.comments.each do |comment| %>
-    <p>
-      <%= comment.body %>
-      <%= comment.user.name %>
-      <%= comment.created_at %>
-    </p>
-  <% end %>
-<% end %>
+<%= render 'shared/comments/index', commentable: @report %>
 
-<%= form_with(model: [@report, @comment], method: :post, local: true) do |form| %>
-  <div class="field">
-    <%= form.text_area(:body, { placeholder: Comment.model_name.human }) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render 'shared/comments/form', commentable: @report, comment: @comment %>
 
 <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <%= link_to t('views.common.back'), reports_path %>

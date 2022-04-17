@@ -20,33 +20,9 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<% if @book.comments.empty? %>
-  <p>
-    <strong><%= Comment.model_name.human %>:</strong>
-    <%= t('views.common.comments_empty') %>
-  </p>
-<% else %>
-  <p>
-    <strong><%= Comment.model_name.human %>:</strong>
-  </p>
-  <% @book.comments.each do |comment| %>
-    <p>
-      <%= comment.body %>
-      <%= comment.user.name %>
-      <%= comment.created_at %>
-    </p>
-  <% end %>
-<% end %>
+<%= render 'shared/comments/index', commentable: @book %>
 
-<%= form_with(model: [@book, @comment], method: :post, local: true) do |form| %>
-  <div class="field">
-    <%= form.text_area(:body, { placeholder: Comment.model_name.human }) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render 'shared/comments/form', commentable: @book, comment: @comment %>
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>

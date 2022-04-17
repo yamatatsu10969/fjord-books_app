@@ -1,0 +1,17 @@
+<% if commentable.comments.empty? %>
+  <p>
+    <strong><%= Comment.model_name.human %>:</strong>
+    <%= t('views.common.comments_empty') %>
+  </p>
+<% else %>
+  <p>
+    <strong><%= Comment.model_name.human %>:</strong>
+  </p>
+  <% commentable.comments.each do |comment| %>
+    <p>
+      <%= comment.body %>
+      <%= comment.user.name %>
+      <%= comment.created_at %>
+    </p>
+  <% end %>
+<% end %>
