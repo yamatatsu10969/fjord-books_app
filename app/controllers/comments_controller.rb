@@ -4,11 +4,8 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
-    if @comment.save
-      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
-    else
-      redirect_to @commentable, alert: @comment.errors.full_messages.join(', ')
-    end
+    @comment.save!
+    redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
   end
 
   def destroy
@@ -23,11 +20,8 @@ class CommentsController < ApplicationController
 
   def update
     @comment = @commentable.comments.find(params[:id])
-    if @comment.update(comment_params)
-      redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
-    else
-      redirect_to @commentable, alert: @comment.errors.full_messages.join(', ')
-    end
+    @comment.update!(comment_params)
+    redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
   end
 
   private
