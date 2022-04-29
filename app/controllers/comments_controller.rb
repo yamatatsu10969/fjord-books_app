@@ -2,10 +2,12 @@
 
 class CommentsController < ApplicationController
   def create
-    @comment = @commentable.comments.new(comment_params)
+    # @comment = @commentable.comments.new(comment_params)
+    @comment = Comment.new
     @comment.user = current_user
-    @comment.save!
-    redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+    @comment.save
+    # @comment.errors.add(:user, 'must be logged in')
+    # redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human) if @comment.save
   end
 
   def destroy
