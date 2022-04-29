@@ -1,9 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  memo: MyText
+readable_code:
+  title: リーダブルコード
+  memo: 読みやすいコードを書くためのテクニック
 
-two:
-  title: MyString
-  memo: MyText
