@@ -22,7 +22,7 @@ class UserTest < ActiveSupport::TestCase
   test '#followed_by?' do
     assert_not @she.followed_by?(@me)
     @she.follow(@me)
-    assert @she.followed_by?(@me)
+    assert @me.followed_by?(@she)
   end
 
   test '#follow' do
