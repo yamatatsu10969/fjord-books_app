@@ -3,6 +3,12 @@
 class Reports::CommentsController < CommentsController
   before_action :set_commentable
 
+  def create
+    super
+    @report = @commentable
+    @render_file = 'reports/show'
+  end
+
   private
 
   def set_commentable
