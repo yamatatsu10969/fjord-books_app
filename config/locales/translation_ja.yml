@@ -23,3 +23,5 @@ ja:
         body: 本文
         author: 著者
         posted_at: 投稿日時
+      comment:
+        body: コメントの本文
