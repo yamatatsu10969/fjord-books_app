@@ -6,7 +6,7 @@ class Reports::CommentsController < CommentsController
   def create
     super
     @report = @commentable
-    @render_file = 'books/show'
+    @render_file = 'reports/show'
   end
 
   private
