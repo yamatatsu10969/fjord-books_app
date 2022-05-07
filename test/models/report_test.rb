@@ -12,7 +12,7 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test '#created_on' do
-    time = Time.zone.now
+    time = Time.current
     report = Report.new(created_at: time.to_date)
     assert_equal time.to_date, report.created_on
   end
