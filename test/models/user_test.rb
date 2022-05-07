@@ -8,11 +8,6 @@ class UserTest < ActiveSupport::TestCase
     @she = User.create!(email: 'she@example.com', password: 'password')
   end
 
-  teardown do
-    @me = nil
-    @she = nil
-  end
-
   test '#following?' do
     assert_not @me.following?(@she)
     @me.follow(@she)
